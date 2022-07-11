@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Classroom Randomizer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid nav">
+        <a class="navbar-brand" href="#">Classroom Randomizer</a>
+        <i class="bi bi-dice-5-fill"></i>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-12 p-5">
+          <form id="inputForm">
+            <div class="mb-3">
+              <p class="intro">This app is designed to help a teacher randomly select students or groups of students. To start, enter the names of all students in your class.</p>
+              <label for="namesInput" class="form-label">Student Names</label>
+              <input class="form-control" id="namesInput">
+              <p id="namesHelp" class="form-text">Enter the names of all students separated by commas.</p>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="addStudents()">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="functions" class="row" style="display: none;">
+        <div class="col-6 p-5">
+          <h3>Virtual Hat</h3>
+          <p>This tool selects a random student from the class. It will not repeat a student until everyone has been selected.</p>
+          <button class="btn btn-primary" onclick="drawFromHat()">Draw From Hat</button>
+          <p id="hatHelp" class="form-text"></p>
+        </div>
+        <div class="col-6 p-5">
+          <h3>Random Groups</h3>
+          <p>This tool creates random groups of students. You can choose the number of groups to divide the class into. The number can't be bigger than half the class size so that everyone has at least one partner.</p>
+          <form id="groupsForm">
+            <label for="groupCountInput" class="form-label">Number of Groups</label>
+            <input type="number" class="form-control" id="groupCountInput">
+            <p id="groupsHelp" class="form-text">Enter a number of groups to divide the class into.</p>
+            <button type="button" class="btn btn-primary" onclick="validateGroups()">Create Groups</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="output" class="card" style="display: none;"></div>
+
+
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
